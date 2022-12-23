@@ -10,9 +10,6 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: CmdLine@2
-  inputs:
-    script: 'git clone https://github.com/dinesh-0723/yuniql  $(Build.SourceDirectory)\yuniql'
 - task: UseYuniqlCLI@1
   inputs:
     version: 'v1.1.55'
@@ -21,6 +18,6 @@ steps:
   inputs:
     version: 'v1.1.55'
     connectionString: 'Server=20.242.184.72;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
-    workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
+    workspacePath: '$(Build.SourcesDirectory)/samples/basic-postgresql-sample'
     targetPlatform: 'postgresql'
     additationalArguments: '--debug'
