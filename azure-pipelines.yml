@@ -21,6 +21,6 @@ steps:
   inputs:
     version: 'v1.1.55'
     connectionString: 'Server=20.242.184.72;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
-    workspacePath: '$(Build.SourceDirectory)\samples\basic-postgresql-sample'
+    workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
     targetPlatform: 'postgresql'
     additationalArguments: '--debug'
