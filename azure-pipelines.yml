@@ -13,3 +13,9 @@ steps:
 - task: CmdLine@2
   inputs:
     script: 'git clone https://github.com/dinesh-0723/yuniql  $(Build.SourceDirectory)\yuniql'
+- task: RunYuniqlCLI@1
+  inputs:
+    version: 'v1.1.55'
+    connectionString: 'Server=20.242.184.72;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
+    workspacePath: '$(Build.SourceDirectory)\samples\basic-postgresql-sample'
+    targetPlatform: 'postgresql'
