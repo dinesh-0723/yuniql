@@ -1,0 +1,24 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: 'git clone https://github.com/dinesh-0723/yuniql  $(Build.SourceDirectory)\yuniql'
+- task: UseYuniqlCLI@1
+  inputs:
+    version: 'v.1.55'
+- task: RunYuniqlCLI@1
+  inputs:
+    version: 'v.1.55'
+    connectionString: 'Server=20.242.184.72;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
+    workspacePath: '${Build.SourcesDirectory}\yuniql\samples\basic-postgresql-sample'
+    targetPlatform: 'postgresql'
