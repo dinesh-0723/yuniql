@@ -16,6 +16,6 @@ steps:
   inputs:
     version: 'v1.1.55'
     connectionString: 'Server=pasflxserver.postgres.database.azure.com;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
-    workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
+    workspacePath: '$(Build.SourcesDirectory)\yuniql\samples\basic-postgresql-sample'
     targetPlatform: 'postgresql'
-    additationalArguments: '--debug'
+    additionalArguments: '--debug'
