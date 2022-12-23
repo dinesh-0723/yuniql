@@ -2,12 +2,12 @@ trigger:
 - master
 
 pool:
-  vmImage: windows-latest
+  vmImage: 'windows-latest'
 
 steps:
 - task: CmdLine@2
   inputs:
-    script: 'git clone https://github.com/dinesh-0723/yuniql  $(Build.SourcesDirectory)\yuniql'
+    script: 'git clone https://github.com/rdagumampan/yuniql  $(Build.SourcesDirectory)\yuniql'
 - task: UseYuniqlCLI@1
   inputs:
     version: 'v1.1.55'
@@ -16,6 +16,6 @@ steps:
   inputs:
     version: 'v1.1.55'
     connectionString: 'Server=pasflxserver.postgres.database.azure.com;Port=5432;Database=postgres;User Id=welcome;Password=Azure5005@;'
-    workspacePath: '$(Build.SourcesDirectory)/samples/basic-postgresql-sample'
+    workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
     targetPlatform: 'postgresql'
     additationalArguments: '--debug'
