@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'windows-2019'
 
 steps:
 - task: UseYuniqlCLI@1
@@ -12,7 +12,7 @@ steps:
 - task: RunYuniqlCLI@1
   inputs:
     version: 'v0.00'
-    connectionString: 'Server=tcp:paspostsql.postgres.database.azure.com,1433;Initial Catalog=helloyuniql;User ID=Selhhost@paspostsql;Password=Welcome5005@;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
+    connectionString: 'Server=tcp:paspostsql.postgres.database.azure.com,5432;Initial Catalog=helloyuniql;User ID=Selhhost@paspostsql;Password=Welcome5005@;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
     workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
     targetPlatform: 'PostgreSql'
     additionalArguments: '--debug'
