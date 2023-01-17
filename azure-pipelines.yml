@@ -5,17 +5,14 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
-- task: CmdLine@2
+- task: UseYuniqlCLI@0
   inputs:
-    script: 'git clone https://github.com/rdagumampan/yuniql $(Build.SourcesDirectory)\yuniql'
-- task: UseYuniqlCLI@1
+    version: 'latest'
+
+- task: RunYuniqlCLI@0
   inputs:
-    version: 'v1.1.55'
-  
-- task: RunYuniqlCLI@1
-  inputs:
-    version: 'v1.1.55'
-    connectionString: 'Server=welcome.postgres.database.azure.com;Port=5432;Database=newdatabase;User Id=welcome;Password=Microsoft5005@;'
+    version: 'latest'
+    connectionString: 'Server=tcp:paspostsql.postgres.database.azure.com,1433;Initial Catalog=helloyuniql;User ID=Selhhost@paspostsql;Password=Welcome5005@;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
     workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
-    targetPlatform: 'postgresql'
+    targetPlatform: 'PostgreSql'
     additionalArguments: '--debug'
