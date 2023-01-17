@@ -6,8 +6,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-latest'
+pool: D-Self-Hosted
 
 steps:
 - task: CmdLine@2
