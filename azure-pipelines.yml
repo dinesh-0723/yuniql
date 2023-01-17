@@ -11,7 +11,7 @@ steps:
 
 - task: RunYuniqlCLI@1
   inputs:
-    version: 'latest'
+    version: 'v0.00'
     connectionString: 'Server=tcp:paspostsql.postgres.database.azure.com,1433;Initial Catalog=helloyuniql;User ID=Selhhost@paspostsql;Password=Welcome5005@;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;'
     workspacePath: '$(Build.SourcesDirectory)\samples\basic-postgresql-sample'
     targetPlatform: 'PostgreSql'
